@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE Photocopy / Verification / Re-Evaluation Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef2f7;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+height:75px;
+background:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 25px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-area img{
+width:50px;
+height:50px;
+}
+
+.logo-title{
+font-size:28px;
+font-weight:700;
+color:#1f2f46;
+}
+
+.nav-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:15px;
+font-weight:500;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.login-btn{
+background:#0bb783;
+color:#fff;
+}
+
+.register-btn{
+background:#fff;
+border:2px solid #0bb783;
+color:#0bb783;
+}
+
+/* COMMON */
+
+.page{
+display:none;
+}
+
+/* HOME */
+
+.home-page{
+display:block;
+padding:40px;
+}
+
+.hero{
+background:linear-gradient(to right,#dceef7,#edf5d7);
+padding:50px;
+border-radius:25px;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.hero-left h1{
+font-size:60px;
+color:#22304d;
+margin-bottom:15px;
+}
+
+.hero-left span{
+color:#0bb783;
+}
+
+.hero-left p{
+font-size:18px;
+color:#555;
+margin-bottom:30px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.service-boxes{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.service-card{
+width:320px;
+background:#fff;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.service-card h3{
+margin-bottom:15px;
+color:#22304d;
+}
+
+/* LOGIN */
+
+.login-page{
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.login-container{
+width:1000px;
+background:#fff;
+border-radius:30px;
+overflow:hidden;
+display:flex;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.login-left{
+width:45%;
+background:#0bb783;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px;
+color:#fff;
+}
+
+.login-left img{
+width:120px;
+margin-bottom:25px;
+}
+
+.login-left h1{
+font-size:55px;
+}
+
+.login-right{
+width:55%;
+padding:50px;
+}
+
+.login-right h2{
+font-size:45px;
+margin-bottom:10px;
+color:#22304d;
+}
+
+.input-group{
+margin-top:20px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:8px;
+font-weight:500;
+}
+
+.input-group input{
+width:100%;
+padding:15px;
+border-radius:10px;
+border:1px solid #ccd4df;
+font-size:15px;
+}
+
+.login-actions{
+margin-top:30px;
+display:flex;
+gap:15px;
+}
+
+/* REGISTER */
+
+.register-page{
+padding:40px;
+}
+
+.register-box{
+background:#fff;
+padding:50px;
+border-radius:25px;
+max-width:1200px;
+margin:auto;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.register-box h1{
+text-align:center;
+color:#0bb783;
+margin-bottom:40px;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* DASHBOARD */
+
+.dashboard-page{
+display:none;
+}
+
+.dashboard{
+display:flex;
+}
+
+.sidebar{
+width:280px;
+background:#fff;
+height:calc(100vh - 75px);
+padding:30px;
+}
+
+.sidebar h3{
+margin-bottom:25px;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar li{
+padding:15px;
+margin-bottom:10px;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.sidebar li:hover{
+background:#e9fff8;
+color:#0bb783;
+}
+
+.dashboard-content{
+flex:1;
+padding:30px;
+}
+
+.status-cards{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.status-card{
+flex:1;
+min-width:280px;
+padding:30px;
+border-radius:20px;
+}
+
+.blue{
+background:#dce9ff;
+}
+
+.green{
+background:#dff5e7;
+}
+
+.yellow{
+background:#f8ebc5;
+}
+
+.profile-card{
+margin-top:30px;
+background:#fff;
+padding:25px;
+border-radius:20px;
+}
+
+.subject-box{
+padding:15px;
+border:1px solid #ddd;
+border-radius:12px;
+margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+@media(max-width:900px){
+
+.hero-left h1{
+font-size:40px;
+}
+
+.login-container{
+flex-direction:column;
+}
+
+.login-left,
+.login-right{
+width:100%;
+}
+
+.dashboard{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+height:auto;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo-area">
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Central_Board_of_Secondary_Education_logo.svg/1200px-Central_Board_of_Secondary_Education_logo.svg.png">
+
+<div class="logo-title">
+CBSE Portal
+</div>
+
+</div>
+
+<div class="nav-buttons">
+
+<button class="btn register-btn" onclick="showRegister()">
+Register
+</button>
+
+<button class="btn login-btn" onclick="showLogin()">
+Login & Apply
+</button>
+
+</div>
+
+</div>
+
+<!-- HOME PAGE -->
+
+<div class="home-page page">
+
+<div class="hero">
+
+<div class="hero-left">
+
+<h1>
+Post Result <span>Activities</span>
+</h1>
+
+<p>
+Unified platform for Photocopy, Verification and Re-evaluation.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn register-btn" onclick="showRegister()">
+Register
+</button>
+
+<button class="btn login-btn" onclick="showLogin()">
+Login & Apply
+</button>
+
+</div>
+
+</div>
+
+<div class="service-boxes">
+
+<div class="service-card">
+
+<h3>PHOTOCOPY</h3>
+
+<p>Apply for Answerbook photocopy.</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>VERIFICATION & RE-EVALUATION</h3>
+
+<p>Verification and rechecking services.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LOGIN -->
+
+<div class="login-page page">
+
+<div class="login-container">
+
+<div class="login-left">
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Central_Board_of_Secondary_Education_logo.svg/1200px-Central_Board_of_Secondary_Education_logo.svg.png">
+
+<h1>CBSE</h1>
+
+<p>Photocopy • Verification • Re-Evaluation</p>
+
+</div>
+
+<div class="login-right">
+
+<h2>Sign In</h2>
+
+<p>Enter your credentials to continue</p>
+
+<div class="input-group">
+
+<label>Roll Number</label>
+
+<input type="text" id="loginRoll">
+
+</div>
+
+<div class="input-group">
+
+<label>Admit Card ID</label>
+
+<input type="password" id="loginPassword">
+
+</div>
+
+<div class="login-actions">
+
+<button class="btn login-btn" onclick="login()">
+Login
+</button>
+
+<button class="btn register-btn" onclick="showHome()">
+Home
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- REGISTER -->
+
+<div class="register-page page">
+
+<div class="register-box">
+
+<h1>CANDIDATE REGISTRATION</h1>
+
+<div class="form-grid">
+
+<div class="input-group">
+<label>Class</label>
+<input type="text" id="class">
+</div>
+
+<div class="input-group">
+<label>Roll Number</label>
+<input type="text" id="roll">
+</div>
+
+<div class="input-group">
+<label>Admit Card ID</label>
+<input type="text" id="admit">
+</div>
+
+<div class="input-group">
+<label>Student Name</label>
+<input type="text" id="name">
+</div>
+
+<div class="input-group">
+<label>Mobile Number</label>
+<input type="text" id="mobile">
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="email">
+</div>
+
+<div class="input-group">
+<label>Address</label>
+<input type="text" id="address">
+</div>
+
+<div class="input-group">
+<label>PIN Code</label>
+<input type="text" id="pincode">
+</div>
+
+</div>
+
+<br><br>
+
+<button class="btn login-btn" onclick="registerUser()">
+Register
+</button>
+
+</div>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="dashboard-page page">
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+<h3>DASHBOARD</h3>
+
+<ul>
+
+<li onclick="showDashboardMain()">
+Dashboard
+</li>
+
+<li onclick="openPhotocopy()">
+Photocopy
+</li>
+
+<li onclick="openRevaluation()">
+Verification/Re-evaluation
+</li>
+
+<li onclick="showPaymentHistory()">
+Payment History
+</li>
+
+<li onclick="logout()">
+Logout
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-content" id="dashboardContent">
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const subjects = [
+
+"ENGLISH CORE",
+"MATHEMATICS",
+"PHYSICS",
+"CHEMISTRY",
+"BIOLOGY",
+"PHYSICAL EDUCATION",
+"ACCOUNTANCY",
+"BUSINESS STUDIES",
+"ECONOMICS",
+"HISTORY",
+"POLITICAL SCIENCE",
+"COMPUTER SCIENCE"
+
+];
+
+const pages = document.querySelectorAll('.page');
+
+function hideAllPages(){
+
+pages.forEach(page=>{
+
+page.style.display='none';
+
+});
+
+}
+
+function showHome(){
+
+hideAllPages();
+
+document.querySelector('.home-page').style.display='block';
+
+}
+
+function showLogin(){
+
+hideAllPages();
+
+document.querySelector('.login-page').style.display='flex';
+
+}
+
+function showRegister(){
+
+hideAllPages();
+
+document.querySelector('.register-page').style.display='block';
+
+}
+
+function showDashboard(){
+
+hideAllPages();
+
+document.querySelector('.dashboard-page').style.display='block';
+
+showDashboardMain();
+
+}
+
+function registerUser(){
+
+const userData = {
+
+class:document.getElementById('class').value,
+roll:document.getElementById('roll').value,
+admit:document.getElementById('admit').value,
+name:document.getElementById('name').value,
+mobile:document.getElementById('mobile').value,
+email:document.getElementById('email').value,
+address:document.getElementById('address').value,
+pincode:document.getElementById('pincode').value
+
+};
+
+localStorage.setItem('cbseUser',JSON.stringify(userData));
+
+alert('Registration Successful');
+
+showLogin();
+
+}
+
+function login(){
+
+const roll=document.getElementById('loginRoll').value;
+
+const password=document.getElementById('loginPassword').value;
+
+const savedUser=JSON.parse(localStorage.getItem('cbseUser'));
+
+if(savedUser && roll===savedUser.roll && password===savedUser.admit){
+
+showDashboard();
+
+}else{
+
+alert('Invalid Credentials');
+
+}
+
+}
+
+function showDashboardMain(){
+
+const user=JSON.parse(localStorage.getItem('cbseUser'));
+
+document.getElementById('dashboardContent').innerHTML=`
+
+<div class="status-cards">
+
+<div class="status-card blue">
+
+<h2>PHOTOCOPY</h2>
+
+<p>Application Status : Pending</p>
+
+</div>
+
+<div class="status-card green">
+
+<h2>VERIFICATION</h2>
+
+<p>Currently Closed</p>
+
+</div>
+
+<div class="status-card yellow">
+
+<h2>RE-EVALUATION</h2>
+
+<p>Currently Closed</p>
+
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<h2>Student Profile</h2>
+
+<br>
+
+<p><b>Name:</b> ${user.name}</p>
+
+<p><b>Roll Number:</b> ${user.roll}</p>
+
+<p><b>Email:</b> ${user.email}</p>
+
+<p><b>Mobile:</b> ${user.mobile}</p>
+
+<p><b>Address:</b> ${user.address}</p>
+
+<p><b>PIN Code:</b> ${user.pincode}</p>
+
+</div>
+
+`;
+
+}
+
+function openPhotocopy(){
+
+let html=`
+
+<div style="background:#fff;padding:30px;border-radius:20px;">
+
+<h1 style="margin-bottom:25px;">
+Photocopy Application
+</h1>
+
+<h3>Select Subjects (₹100 each)</h3>
+
+<br>
+
+`;
+
+subjects.forEach(sub=>{
+
+html+=`
+
+<div class="subject-box">
+
+<div>
+
+<input type="checkbox" class="subjectCheck" value="${sub}">
+
+&nbsp;
+
+${sub}
+
+</div>
+
+<div style="color:#0bb783;font-weight:600;">
+₹100
+</div>
+
+</div>
+
+`;
+
+});
+
+html+=`
+
+<br>
+
+<button class="btn register-btn" onclick="showDashboardMain()">
+Back
+</button>
+
+<button class="btn login-btn" onclick="previewSubjects()">
+Proceed
+</button>
+
+</div>
+
+`;
+
+document.getElementById('dashboardContent').innerHTML=html;
+
+}
+
+function previewSubjects(){
+
+const checks=document.querySelectorAll('.subjectCheck');
+
+let selected=[];
+
+checks.forEach(check=>{
+
+if(check.checked){
+
+selected.push(check.value);
+
+}
+
+});
+
+if(selected.length===0){
+
+alert('Select at least one subject');
+
+return;
+
+}
+
+localStorage.setItem('selectedSubjects',JSON.stringify(selected));
+
+let total=selected.length*100;
+
+let html=`
+
+<div style="background:#fff;padding:30px;border-radius:20px;">
+
+<h1>
+Preview & Confirmation
+</h1>
+
+<br>
+
+`;
+
+selected.forEach(sub=>{
+
+html+=`
+
+<div class="subject-box">
+
+<div>${sub}</div>
+
+<div>₹100</div>
+
+</div>
+
+`;
+
+});
+
+html+=`
+
+<h2 style="margin-top:20px;color:#0bb783;">
+Total Fees : ₹${total}
+</h2>
+
+<br>
+
+<button class="btn register-btn" onclick="openPhotocopy()">
+Back
+</button>
+
+<button class="btn login-btn" onclick="makePayment(${total})">
+Proceed To Payment
+</button>
+
+</div>
+
+`;
+
+document.getElementById('dashboardContent').innerHTML=html;
+
+}
+
+function makePayment(amount){
+
+window.open('https://www.cbse.nic.in','_blank');
+
+let history=JSON.parse(localStorage.getItem('paymentHistory')) || [];
+
+history.push({
+
+date:new Date().toLocaleString(),
+amount:amount,
+status:'SUCCESS'
+
+});
+
+localStorage.setItem('paymentHistory',JSON.stringify(history));
+
+showPaymentSuccess();
+
+}
+
+function showPaymentSuccess(){
+
+document.getElementById('dashboardContent').innerHTML=`
+
+<div style="
+background:#fff;
+padding:60px;
+border-radius:20px;
+text-align:center;
+">
+
+<h1 style="
+color:#0bb783;
+font-size:45px;
+margin-bottom:20px;
+">
+Payment Successful
+</h1>
+
+<p style="font-size:18px;">
+Your application has been submitted successfully.
+</p>
+
+<br><br>
+
+<button class="btn login-btn" onclick="showPaymentHistory()">
+View Payment History
+</button>
+
+</div>
+
+`;
+
+}
+
+function showPaymentHistory(){
+
+const history=JSON.parse(localStorage.getItem('paymentHistory')) || [];
+
+let html=`
+
+<div style="background:#fff;padding:30px;border-radius:20px;">
+
+<h1>
+Payment History
+</h1>
+
+<br>
+
+`;
+
+if(history.length===0){
+
+html+=`No payment history found`;
+
+}else{
+
+history.forEach(item=>{
+
+html+=`
+
+<div class="subject-box">
+
+<div>
+
+<b>${item.date}</b>
+
+</div>
+
+<div>
+
+₹${item.amount} - ${item.status}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+html+=`</div>`;
+
+document.getElementById('dashboardContent').innerHTML=html;
+
+}
+
+function openRevaluation(){
+
+document.getElementById('dashboardContent').innerHTML=`
+
+<div style="
+background:#fff;
+padding:70px;
+border-radius:20px;
+text-align:center;
+">
+
+<h1 style="color:red;">
+This window is currently closed for Class 12 students.
+</h1>
+
+<br>
+
+<p>
+Please wait for official CBSE notification.
+</p>
+
+</div>
+
+`;
+
+}
+
+function logout(){
+
+showHome();
+
+}
+
+showHome();
+
+</script>
+
+</body>
+</html>
